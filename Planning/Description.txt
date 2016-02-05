@@ -1,0 +1,19 @@
+Usage Case for MasterMind
+
+Playing against the machine
+
+
+User opens the game. The game will prompt user whether they would like to be the codeBreaker, or the codeMaker. (The latter would play against an AI.).
+
+codeBreaker: 
+	Computer will randomly generate a code*. The user will be given a choice of 8 colors** to choose from
+	to enter a 4 color length code. once the code has been entered, the computer will check against it's own code, and return 1 black peg for every color 
+	in the appropriate slot, and 1 white peg for every color that matches but is not in the correct slot. That will be printed on screen, and the next 
+	turn will begin, displaying the history***, and awaiting the next turn. if the player receives 4 black pegs (AKA they guess the exact code), the player
+	wins, displaying the Victory text, and ending the game.	if the game reaches to 12 turns, the player loses the game, ending it. At the end of the game,
+	user receives option to play again, return to main menu, or exit the game.
+	
+codeMaker: 
+	Computer will ask the player to enter a 4 color code. Once player has entered the code, the AI will loop taking a turn, waiting 2 seconds, and repeating
+	until the end of the game is reached. and display the game's History, and the player's code if successful.
+
