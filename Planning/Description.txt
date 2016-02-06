@@ -16,6 +16,14 @@ codeBreaker:
 codeMaker: 
 	Computer will ask the player to enter a 4 color code. Once player has entered the code, the AI will loop taking a turn, waiting 2 seconds, and repeating
 	until the end of the game is reached. and display the game's History, and the player's code, if successful.
-
+	
+	
+Actors:
+	Player
+	Board
+	Colors
+	Pegs
+	
+	
 Procedure:
 	
