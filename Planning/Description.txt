@@ -23,7 +23,3 @@ Actors:
 	Board
 	Colors
 	Pegs
-	
-	
-Procedure:
-	
