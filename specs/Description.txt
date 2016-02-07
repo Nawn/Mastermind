@@ -23,3 +23,8 @@ Actors:
 	Board
 	Colors
 	Pegs
+
+Steps of excecution:
+	1.)Computer will ask AI to make code.
+	2.)AI will enter code into Board's Answer.
+	3.)
