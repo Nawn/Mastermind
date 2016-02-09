@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.1.1">
-  <zoom_level>9</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>738</x>
-      <y>279</y>
-      <w>180</w>
-      <h>135</h>
+      <x>574</x>
+      <y>217</y>
+      <w>140</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>board: Board
 --
@@ -23,10 +23,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>153</x>
-      <y>342</y>
-      <w>153</w>
-      <h>99</h>
+      <x>119</x>
+      <y>266</y>
+      <w>119</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>code_maker: Artificial
 --
@@ -37,10 +37,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>387</x>
-      <y>225</y>
-      <w>261</w>
-      <h>117</h>
+      <x>301</x>
+      <y>175</y>
+      <w>203</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>game:GameManager
 --
@@ -55,10 +55,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>882</x>
-      <y>450</y>
-      <w>117</w>
-      <h>99</h>
+      <x>686</x>
+      <y>350</y>
+      <w>91</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>history:History
 --
@@ -68,10 +68,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>153</x>
-      <y>450</y>
-      <w>153</w>
-      <h>99</h>
+      <x>119</x>
+      <y>350</y>
+      <w>119</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>code_breaker: Player
 --
@@ -82,10 +82,10 @@
   <element>
     <id>Text</id>
     <coordinates>
-      <x>324</x>
-      <y>117</y>
-      <w>495</w>
-      <h>36</h>
+      <x>252</x>
+      <y>91</y>
+      <w>385</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>-------------------Object Model, case: Player codeBreaker, AI codeMaker-------------------
 </panel_attributes>
@@ -94,10 +94,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>351</x>
-      <y>243</y>
-      <w>54</w>
-      <h>225</h>
+      <x>273</x>
+      <y>189</y>
+      <w>42</w>
+      <h>175</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;230.0;10.0;10.0;40.0;10.0</additional_attributes>
@@ -105,10 +105,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>342</x>
-      <y>261</y>
-      <w>27</w>
-      <h>99</h>
+      <x>266</x>
+      <y>203</y>
+      <w>21</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
@@ -116,10 +116,10 @@
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>171</x>
-      <y>144</y>
-      <w>126</w>
-      <h>63</h>
+      <x>133</x>
+      <y>112</y>
+      <w>98</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>Will send this input 
 to board's Answer 
@@ -130,10 +130,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>225</x>
-      <y>198</y>
-      <w>126</w>
-      <h>162</h>
+      <x>175</x>
+      <y>154</y>
+      <w>98</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 1</panel_attributes>
@@ -142,10 +142,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>639</x>
-      <y>234</y>
-      <w>189</w>
-      <h>63</h>
+      <x>497</x>
+      <y>182</y>
+      <w>147</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;190.0;20.0;190.0;50.0</additional_attributes>
@@ -153,10 +153,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>225</y>
-      <w>216</w>
-      <h>36</h>
+      <x>490</x>
+      <y>175</y>
+      <w>168</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 2. set_board_answer(1.Code):void</panel_attributes>
@@ -165,10 +165,10 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>459</x>
-      <y>27</y>
-      <w>126</w>
-      <h>63</h>
+      <x>357</x>
+      <y>21</y>
+      <w>98</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>players will be a
 Hash containing
@@ -180,10 +180,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>81</y>
-      <w>27</w>
-      <h>54</h>
+      <x>399</x>
+      <y>63</y>
+      <w>21</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
@@ -191,10 +191,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>639</x>
-      <y>306</y>
-      <w>117</w>
-      <h>63</h>
+      <x>497</x>
+      <y>238</y>
+      <w>91</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 Has a&gt;&gt;</panel_attributes>
@@ -203,10 +203,10 @@ Has a&gt;&gt;</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>360</x>
-      <y>450</y>
-      <w>117</w>
-      <h>18</h>
+      <x>280</x>
+      <y>350</y>
+      <w>91</w>
+      <h>14</h>
     </coordinates>
     <panel_attributes>&lt;&lt;players:Hash&gt;&gt;
 style=wordwrap</panel_attributes>
@@ -215,10 +215,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>297</x>
-      <y>378</y>
-      <w>81</w>
-      <h>90</h>
+      <x>231</x>
+      <y>294</y>
+      <w>63</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;50.0;10.0;50.0;80.0;70.0;80.0</additional_attributes>
@@ -226,10 +226,10 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>432</x>
-      <y>477</y>
-      <w>135</w>
-      <h>63</h>
+      <x>336</x>
+      <y>371</y>
+      <w>105</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>player[:code_maker],
 or
@@ -240,10 +240,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>441</x>
-      <y>459</y>
-      <w>81</w>
-      <h>36</h>
+      <x>343</x>
+      <y>357</y>
+      <w>63</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;20.0</additional_attributes>
@@ -251,10 +251,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>297</x>
-      <y>441</y>
-      <w>63</w>
-      <h>81</h>
+      <x>231</x>
+      <y>343</y>
+      <w>49</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>50.0;10.0;50.0;70.0;10.0;70.0</additional_attributes>
@@ -262,10 +262,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>441</x>
-      <y>378</y>
-      <w>81</w>
-      <h>90</h>
+      <x>343</x>
+      <y>294</y>
+      <w>63</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
  
@@ -278,9 +278,9 @@ bg=blue</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>0</x>
-      <y>414</y>
-      <w>135</w>
-      <h>72</h>
+      <y>322</y>
+      <w>105</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>generate_code will
 return a 4 color code
@@ -292,10 +292,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>891</x>
-      <y>252</y>
-      <w>180</w>
-      <h>54</h>
+      <x>693</x>
+      <y>196</y>
+      <w>140</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 2.1 set_answer(2.)</panel_attributes>
@@ -304,10 +304,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>216</x>
-      <y>288</y>
-      <w>126</w>
-      <h>27</h>
+      <x>168</x>
+      <y>224</y>
+      <w>98</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>1. get_answer():Code
 </panel_attributes>
@@ -316,10 +316,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>369</x>
-      <y>333</y>
-      <w>153</w>
-      <h>126</h>
+      <x>287</x>
+      <y>259</y>
+      <w>119</w>
+      <h>98</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.
 1.1 players
@@ -330,10 +330,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>198</y>
-      <w>72</w>
-      <h>63</h>
+      <x>280</x>
+      <y>154</y>
+      <w>56</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>30.0;50.0;10.0;50.0;10.0;10.0;60.0;10.0;60.0;30.0</additional_attributes>
@@ -341,10 +341,10 @@ bg=blue</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>306</x>
-      <y>144</y>
-      <w>180</w>
-      <h>63</h>
+      <x>238</x>
+      <y>112</y>
+      <w>140</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>3.turn_announce
   (board.rows.size+1,
