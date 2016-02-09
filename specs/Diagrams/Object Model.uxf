@@ -1,67 +1,64 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="13.3">
-  <zoom_level>13</zoom_level>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>845</x>
-      <y>533</y>
-      <w>169</w>
-      <h>143</h>
+      <x>738</x>
+      <y>297</y>
+      <w>180</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>board: Board
 --
-+history:Array
-+colors:Array</panel_attributes>
++rows:Array
++colors:Array
+-answer:Code
+-attempts:Int
+--
++set_answer(answer):void
++attempts_allowed():Int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>390</x>
-      <y>533</y>
-      <w>182</w>
-      <h>143</h>
+      <x>153</x>
+      <y>360</y>
+      <w>153</w>
+      <h>99</h>
     </coordinates>
-    <panel_attributes>codeMaker: Artificial
+    <panel_attributes>code_maker: Artificial
 --
 --
-+generateCode()</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>182</x>
-      <y>390</y>
-      <w>182</w>
-      <h>91</h>
-    </coordinates>
-    <panel_attributes>1 Board contains 2 players, Player&amp;AI
-
-bg=blue</panel_attributes>
++generate_code():Code</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
-      <y>260</y>
-      <w>195</w>
-      <h>65</h>
+      <x>387</x>
+      <y>243</y>
+      <w>261</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>game:GameManager
 --
-</panel_attributes>
++players:Hash
++board:Board
+--
++set_board_answer(Code):void
++get_answer():Code
++turn_announce(turnNum, allowedFails):void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1222</x>
-      <y>585</y>
-      <w>169</w>
-      <h>143</h>
+      <x>882</x>
+      <y>468</y>
+      <w>117</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>history:History
 --
@@ -71,24 +68,24 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>390</x>
-      <y>377</y>
-      <w>169</w>
-      <h>143</h>
+      <x>153</x>
+      <y>468</y>
+      <w>153</w>
+      <h>99</h>
     </coordinates>
-    <panel_attributes>player: Player
+    <panel_attributes>code_breaker: Player
 --
 --
-+generateCode()</panel_attributes>
++generate_code():Code</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>455</x>
-      <y>208</y>
-      <w>715</w>
-      <h>39</h>
+      <x>324</x>
+      <y>135</y>
+      <w>495</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>-------------------Object Model, case: Player codeBreaker, AI codeMaker-------------------
 </panel_attributes>
@@ -97,12 +94,261 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>455</x>
-      <y>286</y>
-      <w>221</w>
-      <h>117</h>
+      <x>351</x>
+      <y>261</y>
+      <w>54</w>
+      <h>225</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;70.0;10.0;10.0;150.0;10.0</additional_attributes>
+    <additional_attributes>10.0;230.0;10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>279</y>
+      <w>27</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>171</x>
+      <y>162</y>
+      <w>126</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Will send this input 
+to board's Answer 
+field.
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>225</x>
+      <y>216</y>
+      <w>126</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+1</panel_attributes>
+    <additional_attributes>120.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>639</x>
+      <y>252</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;190.0;20.0;190.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>243</y>
+      <w>216</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+2. set_board_answer(1.Code):void</panel_attributes>
+    <additional_attributes>180.0;20.0;50.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>459</x>
+      <y>45</y>
+      <w>126</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>players will be a
+Hash containing
+code_maker:Player
+code_breaker:Player
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>513</x>
+      <y>99</y>
+      <w>27</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>639</x>
+      <y>324</y>
+      <w>117</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+Has a&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>360</x>
+      <y>468</y>
+      <w>117</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;players:Hash&gt;&gt;
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>297</x>
+      <y>396</y>
+      <w>81</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;50.0;10.0;50.0;80.0;70.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>432</x>
+      <y>495</y>
+      <w>135</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>player[:code_maker],
+or
+player[:code_breaker]
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>441</x>
+      <y>477</y>
+      <w>81</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>297</x>
+      <y>459</y>
+      <w>63</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>50.0;10.0;50.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>441</x>
+      <y>396</y>
+      <w>81</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+ 
+ 
+ 
+&lt;&lt;Has a</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>0</x>
+      <y>432</y>
+      <w>135</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>generate_code will
+return a 4 color code
+made up of colors
+available on the board.
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>891</x>
+      <y>270</y>
+      <w>180</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+2.1 set_answer(2.)</panel_attributes>
+    <additional_attributes>30.0;40.0;70.0;40.0;70.0;10.0;10.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>216</x>
+      <y>306</y>
+      <w>126</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>1. get_answer():Code
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>369</x>
+      <y>351</y>
+      <w>153</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+1.1 players
+    [:code_maker]
+    .generate_code():Code</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>216</y>
+      <w>72</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30.0;50.0;10.0;50.0;10.0;10.0;60.0;10.0;60.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>306</x>
+      <y>162</y>
+      <w>180</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>3.turn_announce
+  (board.rows.size+1,
+  board.attempts_allowed():Int)</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
