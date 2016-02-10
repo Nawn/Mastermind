@@ -29,11 +29,10 @@ Steps of excecution:
 		1a.)If the code colors do not exist, or do not meet the format of input, will ask to retry.
 	2.)GameManager will enter code into Board's Answer.
 	3.)GameManager will print Turn # of max#
-	4.)Computer will ask for Input
-	5.)Player will input 4 color code.
-		5a.)If player enters an incorrect code (Color that does not exist, or wrong input format)
+	4.)Player will input 4 color code.
+		4a.)If player enters an incorrect code (Color that does not exist, or wrong input format)
 			Player will be prompted to retry the code.
-	6.)Player will see board history with newly input code printed in row along with codeMaker response.
-	7.)will loop until player recieves 4 correct pegs, or reaches the number of failed turns required to fail.
-	8.)announce win/loss and stats(time, and number of turns), and ask whether to play again?
-	9.) Player will enter anything to replay, or N/No to exit to main menu.
+	5.)Player will see board history with newly input code printed in row along with codeMaker response.
+	6.)will loop until player recieves 4 correct pegs, or reaches the number of failed turns required to fail.
+	7.)announce win/loss and stats(time, and number of turns), and ask whether to play again?
+	8.) Player will enter anything to replay, or N/No to exit to main menu.

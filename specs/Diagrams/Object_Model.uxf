@@ -17,7 +17,8 @@
 -attempts:Int
 --
 +set_answer(answer):void
-+attempts_allowed():Int</panel_attributes>
++attempts_allowed():Int
++build():Table</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -30,8 +31,8 @@
     </coordinates>
     <panel_attributes>code_maker: Artificial
 --
---
-+generate_code():Code</panel_attributes>
++generate_code():Code
++turn():Code</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -49,20 +50,9 @@
 --
 +set_board_answer(Code):void
 +get_answer():Code
-+turn_announce(turnNum, allowedFails):void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>686</x>
-      <y>350</y>
-      <w>91</w>
-      <h>77</h>
-    </coordinates>
-    <panel_attributes>history:History
---
-</panel_attributes>
++turn_announce(turnNum, allowedFails):void
++take_turn():Void
++display():void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -75,8 +65,8 @@
     </coordinates>
     <panel_attributes>code_breaker: Player
 --
---
-+generate_code():Code</panel_attributes>
++generate_code():Code
++turn():Code</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -350,5 +340,83 @@ bg=blue</panel_attributes>
   (board.rows.size+1,
   board.attempts_allowed():Int)</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>371</x>
+      <y>259</y>
+      <w>105</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+4. take_turn():Void</panel_attributes>
+    <additional_attributes>10.0;50.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>469</x>
+      <y>462</y>
+      <w>126</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>take_turn() will
+ask whichever is code
+breaker to input code.
+return will be added 
+to board's rows, and 
+add a result to code match
+
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>434</x>
+      <y>294</y>
+      <w>91</w>
+      <h>182</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>259</y>
+      <w>84</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+5. display():void</panel_attributes>
+    <additional_attributes>80.0;40.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>511</x>
+      <y>364</y>
+      <w>126</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>will puts the board in ASCII
+characters (build():Table)
+
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>511</x>
+      <y>273</y>
+      <w>49</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;130.0</additional_attributes>
   </element>
 </diagram>
