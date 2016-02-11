@@ -1,5 +1,53 @@
-Usage Case for MasterMind
+Psuedo-Code:
 
+
+puts "Hello! Thanks for playing Mastermind! Will you be the: \n1.Code Breaker\n2.Code Maker "
+answer = gets.chomp
+
+if answer.to_i == "1"
+game = GameManager.new(:code_breaker)
+
+game.set_board_answer(game.get_answer())
+
+loop {
+game.turn_announce
+
+game.take_turn()
+
+game.display()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Usage Case for MasterMind
 Playing against the machine
 
 
