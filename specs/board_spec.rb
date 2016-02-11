@@ -14,6 +14,10 @@ describe Board do
       it "rows will be an Empty array" do
         expect(@board.rows).to eql([])
       end
+      
+      it "Will have default attempts allowed(12)" do
+        expect(@board.attemps_allowed).to eql(12)
+      end
     end
   end
 end
