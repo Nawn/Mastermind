@@ -50,7 +50,7 @@
 --
 +set_board_answer(Code:Array):void
 +turn_announce(turnNum, allowedFails):String
-+take_turn():Void
++take_turn(Array):Void
 +display():void</panel_attributes>
     <additional_attributes/>
   </element>
