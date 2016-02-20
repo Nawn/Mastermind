@@ -45,7 +45,7 @@ describe Board do
     end
     
     it "will be an array of allowed colors" do
-      #set the colors I wrote down in the notebook here
+      expect(@board.colors).to eql(%w(Bl G Br O M W P R))
     end
   end
   
