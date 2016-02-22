@@ -3,6 +3,7 @@ require_relative 'spec_helper.rb'
 describe GameManager do
   before(:each) do
     @manager = GameManager.new
+    @manager.set_board_answer(%w(R P W M))
   end
   
   describe "#new" do
@@ -93,18 +94,107 @@ describe GameManager do
     end
     
     context "when given correct input" do
-      it "adds Array to board row" do
+      it "adds Rows to board row" do
         @manager.take_turn(%w(Bl G Br O))
         
-        expect(@manager.board.rows[0]).to be_an(Array)
-        expect(@manager.board.rows[0]).to eql(["Bl", "G", "Br", "O"])
+        expect(@manager.board.rows[0]).to be_a(Row)
+        expect(@manager.board.rows[0].code).to eql(["Bl", "G", "Br", "O"])
         
         @manager.take_turn(%w(M W P R))
         
-        expect(@manager.board.rows[1]).to be_an(Array)
-        expect(@manager.board.rows[1]).to eql(["M", "W", "P", "R"])
+        expect(@manager.board.rows[1]).to be_a(Row)
+        expect(@manager.board.rows[1].code).to eql(["M", "W", "P", "R"])
         expect(@manager.board.rows[2]).to be_nil
       end
+      
+      context "when code matches exactly" do
+        it "sets result to an Array of 4 Capital X's" do
+          @manager.take_turn(%w(R P W M))
+          expect(@manager.rows[0].result).to eql(%w(X X X X))
+        end
+      end
+      
+      context "when code has all colors but in wrong order" do
+        it "returns 4 o's" do
+          @manager.take_turn(%w(M W P R))
+          expect(@manager.rows[0].result).to eql(%w(o o o o))
+        end
+      end
+      
+      context "when code is completely wrong" do
+        it "sets result to an empty Array" do
+          @manager.take_turn(Bl G Br O)
+          expect(@manager.row[0].result).to be_empty
+        end
+      end
+      
+      context "when code has 2 correct colors in correct spaces and 2 incorrect colors" do
+        it "returns 2 X pegs" do
+          @manager.take_turn(%w(R P Br O))
+          expect(@manager.row[0].result.size).to eql(2)
+          expect(@manager.row[0].result).to eql(["X", "X"])
+        end
+      end
+      
+      context "When code has 2 correct colors in incorrect spaces" do
+        it "returns 2 o pegs" do
+          @manager.take_turn(%w(Bl Br P R))
+          expect(@manager.row[0].result.size).to eql(2)
+          expect(@manager.row[0].result).to eql(["o", "o"])
+        end
+      end
+      
+      context "When given all colors but one combination is wrong" do
+        @manager.take_turn(%w(P R W M))
+        expect(@manager.row[0].result.size).to eql(4)
+        expect(@manager.row[0].result).to eql(["X", "X", "o", "o"])
+      end
     end
+  end
+  
+  describe "#check_over" do
+    context "if the player has room to guess more" do
+      it "should not be true" do
+        5.times do
+          @manager.take_turn(%w(Bl G Br O))
+        end
+        
+        expect(@manager.check_over).to be_false
+      end
+    end
+    
+    context "If the player has run out of tries" do
+      it "returns true" do
+        12.times do
+          @manager.take_turn(%w(Bl G Br O))
+        end
+        
+        expect(@manager.check_over).to be_true
+      end
+    end
+    
+    context "if the player has not guessed code" do
+      it "returns false" do
+        @manager.take_turn(%w(Bl G Br O))
+        expect(@manager.check_over).to be_false
+        @manager.take_turn(%w(O Br G Bl))
+        expect(@manager.check_over).to be_false
+      end
+    end
+    
+    context "when player has guessed code" do
+      it "will return true" do
+        5.times do
+          @manager.take_turn(%w(Bl Br G O))
+        end
+        expect(@manager.check_over).to be_false
+        @manager.take_turn(%w(R P W M))
+        expect(@manager.check_over).to be_true
+      end
+    end
+  end
+  
+  describe "#check_victory" do
+    
   end
 end

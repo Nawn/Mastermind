@@ -12,6 +12,8 @@ describe Player do
   end
   
   describe "#turn" do
-    expect(@player.turn).to be_an(Array)
+    it "returns an array" do
+      expect(@player.turn).to be_an(Array)
+    end
   end
 end
