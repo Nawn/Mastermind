@@ -145,9 +145,11 @@ describe GameManager do
       end
       
       context "When given all colors but one combination is wrong" do
-        @manager.take_turn(%w(P R W M))
-        expect(@manager.row[0].result.size).to eql(4)
-        expect(@manager.row[0].result).to eql(["X", "X", "o", "o"])
+        it "returns 2 Xs and 2 os" do
+          @manager.take_turn(%w(P R W M))
+          expect(@manager.row[0].result.size).to eql(4)
+          expect(@manager.row[0].result).to eql(["X", "X", "o", "o"])
+        end
       end
     end
   end

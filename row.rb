@@ -1,0 +1,1 @@
+Row = Struct.new(:code, :result)
