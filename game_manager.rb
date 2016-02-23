@@ -17,6 +17,6 @@ class GameManager
   end
   
   def set_board_answer(input_array)
-    
+    Board.check_valid_code(input_array)
   end
 end

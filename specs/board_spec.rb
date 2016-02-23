@@ -1,6 +1,6 @@
 require_relative 'spec_helper.rb'
 
-describe Board, :focus => true do
+describe Board do
   before(:each) do
     @board = Board.new
   end
