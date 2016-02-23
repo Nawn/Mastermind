@@ -1,6 +1,6 @@
 require_relative 'spec_helper.rb'
 
-describe Board do
+describe Board, :focus => true do
   before(:each) do
     @board = Board.new
   end
@@ -39,13 +39,13 @@ describe Board do
     end
   end
   
-  describe "#colors" do
+  describe "#colors_available" do
     it "returns an Array" do
-      expect(@board.colors).to be_an(Array)
+      expect(Board.colors_available).to be_an(Array)
     end
     
     it "will be an array of allowed colors" do
-      expect(@board.colors).to eql(%w(Bl G Br O M W P R))
+      expect(Board.colors_available).to eql(%w(Bl G Br O M W P R))
     end
   end
   
@@ -67,9 +67,9 @@ describe Board do
     
     context "when given correct input" do
       it "sets board's answer to input" do
-        @board.set_answer(%w(Br Bl O P))
+        @board.set_answer(["Br", "Bl", "O", "P"])
         expect(@board.answer).to eql(["Br", "Bl", "O", "P"])
-        @board.set_answer(%w(O P Br W))
+        @board.set_answer(["O", "P", "Br", "W"])
         expect(@board.answer).to eql(["O", "P", "Br", "W"])
       end
     end
