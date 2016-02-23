@@ -195,6 +195,58 @@ describe GameManager do
   end
   
   describe "#check_victory" do
+    context "when the player has not input correct code" do
+      context "when given absolutely wrong code" do
+        it "returns false" do
+          expect(@manager.check_victory).to be_false
+          @manager.take_turn(%w(Bl G Br O))
+          expect(@manager.check_victory).to be_false
+          5.times do
+            @manager.take_turn(%w(G Bl O Br))
+          end
+          expect(@manager.check_victory).to be_false
+        end
+      end
+      
+      context "when input correct colors in wrong order" do
+        it "returns false" do
+          expect(@manager.check_victory).to be_false
+          @manager.take_turn(%w(M W P R))
+          expect(@manager.check_victory).to be_false
+        end
+      end
+      
+      context "when the player runs out of turns" do
+        it "returns false" do
+          13.times do 
+            @manager.take_turn(%w(M W P R))
+          end
+          
+          expect(@manager.check_victory).to be_false
+        end
+      end
+    end
     
+    context "when player has input correct code" do
+      context "when player inputs right away" do
+        it "returns true" do
+          expect(@manager.check_victory).to be_false
+          @manager.take_turn(%w(R P W M))
+          expect(@manager.check_victory).to be_true
+        end
+      end
+      
+      context "when player inputs after some turns" do
+        it "returns true" do
+          expect(@manager.check_victory).to be_false
+          5.times do
+            @manager.take_turn(%w(Bl G Br O))
+          end
+          expect(@manager.check_victory).to be_false
+          @manager.take_turn(%w(R P W M))
+          expect(@manager.check_victory).to be_true
+        end
+      end
+    end
   end
 end
