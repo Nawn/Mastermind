@@ -12,11 +12,17 @@ class GameManager
     @players = {:code_maker => Player.new, :code_breaker => Artificial.new} if input_symbol == :code_maker
   end
   
-  def take_turn
-    puts "caca"
+  def take_turn (input_array)
+    Board.check_valid_code(input_array)
+    @board.add_row(input_array)
   end
   
   def set_board_answer(input_array)
     Board.check_valid_code(input_array)
+    @board.set_answer(input_array)
+  end
+  
+  def turn_announce
+    "Turn #{@board.rows.size + 1} of #{@board.attempts_allowed}"
   end
 end

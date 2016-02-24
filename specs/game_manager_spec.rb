@@ -47,7 +47,7 @@ describe GameManager do
     end
   end
   
-  describe "#set_board_answer" do
+  describe "#set_board_answer", :focus => true do
     context "when given wrong input" do
       it "raises ArgumentError" do
         expect {@manager.set_board_answer()}.to raise_error(ArgumentError)
@@ -73,7 +73,7 @@ describe GameManager do
     end
   end
   
-  describe "#turn_announce" do
+  describe "#turn_announce", :focus => true do
     it "returns a string" do
       expect(@manager.turn_announce).to be_a(String)
     end
@@ -85,7 +85,7 @@ describe GameManager do
     end
   end
   
-  describe "#take_turn" do
+  describe "#take_turn", :focus => true do
     context "When given wrong input" do
       it "returns an Argument error" do
         expect {@manager.take_turn()}.to raise_error(ArgumentError)
@@ -110,45 +110,45 @@ describe GameManager do
       context "when code matches exactly" do
         it "sets result to an Array of 4 Capital X's" do
           @manager.take_turn(%w(R P W M))
-          expect(@manager.rows[0].result).to eql(%w(X X X X))
+          expect(@manager.board.rows[0].result).to eql(%w(X X X X))
         end
       end
       
       context "when code has all colors but in wrong order" do
         it "returns 4 o's" do
           @manager.take_turn(%w(M W P R))
-          expect(@manager.rows[0].result).to eql(%w(o o o o))
+          expect(@manager.board.rows[0].result).to eql(%w(o o o o))
         end
       end
       
       context "when code is completely wrong" do
         it "sets result to an empty Array" do
-          @manager.take_turn(Bl G Br O)
-          expect(@manager.row[0].result).to be_empty
+          @manager.take_turn(%w(Bl G Br O))
+          expect(@manager.board.rows[0].result).to be_empty
         end
       end
       
       context "when code has 2 correct colors in correct spaces and 2 incorrect colors" do
         it "returns 2 X pegs" do
           @manager.take_turn(%w(R P Br O))
-          expect(@manager.row[0].result.size).to eql(2)
-          expect(@manager.row[0].result).to eql(["X", "X"])
+          expect(@manager.board.rows[0].result.size).to eql(2)
+          expect(@manager.board.rows[0].result).to eql(["X", "X"])
         end
       end
       
       context "When code has 2 correct colors in incorrect spaces" do
         it "returns 2 o pegs" do
           @manager.take_turn(%w(Bl Br P R))
-          expect(@manager.row[0].result.size).to eql(2)
-          expect(@manager.row[0].result).to eql(["o", "o"])
+          expect(@manager.board.rows[0].result.size).to eql(2)
+          expect(@manager.board.rows[0].result).to eql(["o", "o"])
         end
       end
       
       context "When given all colors but one combination is wrong" do
         it "returns 2 Xs and 2 os" do
           @manager.take_turn(%w(P R W M))
-          expect(@manager.row[0].result.size).to eql(4)
-          expect(@manager.row[0].result).to eql(["X", "X", "o", "o"])
+          expect(@manager.board.rows[0].result.size).to eql(4)
+          expect(@manager.board.rows[0].result).to eql(["X", "X", "o", "o"])
         end
       end
     end

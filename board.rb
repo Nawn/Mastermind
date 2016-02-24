@@ -1,4 +1,5 @@
 require 'terminal-table'
+require_relative 'row'
 class Board
   attr_reader :rows
   attr_reader :attempts_allowed
@@ -14,7 +15,7 @@ class Board
     def check_valid_code(input_array)
       raise(ArgumentError, "incorrect input") unless input_array.is_a? Array
       raise(ArgumentError, "incorrect number of colors") unless input_array.size == 4
-      raise(StandardError, "color does not exist") unless input_array.all? {|color| Board.check_color_exist?(color)}
+      raise(ArgumentError, "color does not exist") unless input_array.all? {|color| Board.check_color_exist?(color)}
     end
   end
   @colors_available = ["Bl", "G", "Br", "O", "M", "W", "P", "R"]
@@ -29,6 +30,11 @@ class Board
   def set_answer (input_array)
     Board.check_valid_code(input_array)    
     @answer = input_array
+  end
+  
+  def add_row(input_array)
+    row = Row.new(input_array)
+    @rows << row
   end
   
   def build
