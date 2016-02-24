@@ -33,11 +33,44 @@ class Board
   end
   
   def add_row(input_array)
-    row = Row.new(input_array)
-    @rows << row
+    temp_row = Row.new(input_array)
+    temp_row.result = check_match(input_array)
+    @rows << temp_row
   end
   
   def build
     Terminal::Table.new :rows => @rows
+  end
+  
+  private
+  def check_match(input_array)
+    temp = input_array.clone
+    temp_answer = @answer.clone
+    result = []
+    temp.each_with_index do |color, index|
+      next if color.nil?
+      
+      if temp[index] == temp_answer[index]
+        result << "X" 
+        temp[index] = nil
+        temp_answer[index] = nil
+      end
+    end
+    
+    temp.each_with_index do |color, index|
+      next if color.nil?
+      
+      temp_answer.each_with_index do |answer_color, answer_index|
+        next if color.nil?
+        
+        if color == answer_color
+          result << "o"
+          temp[index] = nil
+          temp_answer[answer_index] = nil
+        end
+      end
+    end
+    
+    result
   end
 end

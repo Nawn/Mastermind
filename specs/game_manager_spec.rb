@@ -47,7 +47,7 @@ describe GameManager do
     end
   end
   
-  describe "#set_board_answer", :focus => true do
+  describe "#set_board_answer" do
     context "when given wrong input" do
       it "raises ArgumentError" do
         expect {@manager.set_board_answer()}.to raise_error(ArgumentError)
@@ -73,7 +73,7 @@ describe GameManager do
     end
   end
   
-  describe "#turn_announce", :focus => true do
+  describe "#turn_announce" do
     it "returns a string" do
       expect(@manager.turn_announce).to be_a(String)
     end
@@ -85,7 +85,7 @@ describe GameManager do
     end
   end
   
-  describe "#take_turn", :focus => true do
+  describe "#take_turn" do
     context "When given wrong input" do
       it "returns an Argument error" do
         expect {@manager.take_turn()}.to raise_error(ArgumentError)
