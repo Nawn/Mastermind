@@ -19,8 +19,8 @@ describe Row do
     end
     
     it "does not have any other attributes" do
-      expect {@row.caca}.to raise_error
-      expect {@row.poop}.to raise_error
+      expect {@row.caca}.to raise_error(NoMethodError)
+      expect {@row.poop}.to raise_error(NoMethodError)
     end
   end
   
