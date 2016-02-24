@@ -31,6 +31,10 @@ class GameManager
     @board.rows[-1].result == %w(X X X X)
   end
   
+  def display
+    puts @board.build
+  end
+  
   def turn_announce
     "Turn #{@board.rows.size + 1} of #{@board.attempts_allowed}"
   end

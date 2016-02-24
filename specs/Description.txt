@@ -1,34 +1,34 @@
-Psuedo-Code:
+require_relative 'specs/spec_helper'
 
-game.done = false
-until game.done {
+done = false
+until done do
 	puts "Hello! Thanks for playing Mastermind! Will you be the: \n1.Code Breaker\n2.Code Maker "
 	answer = gets.chomp
 
-	if answer.to_i == "1"
-		game = GameManager.new(:code_breaker) #tests done
+	if answer.to_i == 1
+		game = GameManager.new(:code_breaker) 
 	else
 		puts "Not implemented yet"
+    puts "returning to menu"
 	end
 
-	game.set_board_answer(game.player[:code_maker].generate_code()) #tests done
+	game.set_board_answer(game.player[:code_maker].generate_code()) 
+  
+	until game.check_over {
+		puts game.turn_announce 
 
-	game.over = false
-	until game.over {
-		puts game.turn_announce #tests done
-
-		game.take_turn() #tests done
+		game.take_turn() 
 
 		game.display() 
 
-		game.over = game.check_over (Decided by either end of turns, or a matching code [4 Xs in last row's result]) #WIP
-		game.victory = game.check_victory #WIP
+		game.over = game.check_over 
+		game.victory = game.check_victory 
 	}
 	puts game.victory ? "You win!" : "You Lose!"
 	
 	puts "Again!? (Anything for yes, N for No)"
-	game.done if gets.chomp == "no"
-}
+	done = true if gets.chomp.downcase == "no" || gets.chomp.downcase == "n"
+end
 
 
 
