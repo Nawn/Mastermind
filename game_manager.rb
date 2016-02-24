@@ -22,6 +22,15 @@ class GameManager
     @board.set_answer(input_array)
   end
   
+  def check_over
+    @board.rows.size >= @board.attempts_allowed || check_victory
+  end
+  
+  def check_victory
+    return false if @board.rows[-1].nil?
+    @board.rows[-1].result == %w(X X X X)
+  end
+  
   def turn_announce
     "Turn #{@board.rows.size + 1} of #{@board.attempts_allowed}"
   end

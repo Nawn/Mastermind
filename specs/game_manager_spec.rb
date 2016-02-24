@@ -161,7 +161,7 @@ describe GameManager do
           @manager.take_turn(%w(Bl G Br O))
         end
         
-        expect(@manager.check_over).to be_false
+        expect(@manager.check_over).to be false
       end
     end
     
@@ -171,16 +171,16 @@ describe GameManager do
           @manager.take_turn(%w(Bl G Br O))
         end
         
-        expect(@manager.check_over).to be_true
+        expect(@manager.check_over).to be true
       end
     end
     
     context "if the player has not guessed code" do
       it "returns false" do
         @manager.take_turn(%w(Bl G Br O))
-        expect(@manager.check_over).to be_false
+        expect(@manager.check_over).to be false
         @manager.take_turn(%w(O Br G Bl))
-        expect(@manager.check_over).to be_false
+        expect(@manager.check_over).to be false
       end
     end
     
@@ -189,9 +189,9 @@ describe GameManager do
         5.times do
           @manager.take_turn(%w(Bl Br G O))
         end
-        expect(@manager.check_over).to be_false
+        expect(@manager.check_over).to be false
         @manager.take_turn(%w(R P W M))
-        expect(@manager.check_over).to be_true
+        expect(@manager.check_over).to be true
       end
     end
   end
@@ -200,21 +200,21 @@ describe GameManager do
     context "when the player has not input correct code" do
       context "when given absolutely wrong code" do
         it "returns false" do
-          expect(@manager.check_victory).to be_false
+          expect(@manager.check_victory).to be false
           @manager.take_turn(%w(Bl G Br O))
-          expect(@manager.check_victory).to be_false
+          expect(@manager.check_victory).to be false
           5.times do
             @manager.take_turn(%w(G Bl O Br))
           end
-          expect(@manager.check_victory).to be_false
+          expect(@manager.check_victory).to be false
         end
       end
       
       context "when input correct colors in wrong order" do
         it "returns false" do
-          expect(@manager.check_victory).to be_false
+          expect(@manager.check_victory).to be false
           @manager.take_turn(%w(M W P R))
-          expect(@manager.check_victory).to be_false
+          expect(@manager.check_victory).to be false
         end
       end
       
@@ -224,7 +224,7 @@ describe GameManager do
             @manager.take_turn(%w(M W P R))
           end
           
-          expect(@manager.check_victory).to be_false
+          expect(@manager.check_victory).to be false
         end
       end
     end
@@ -232,21 +232,21 @@ describe GameManager do
     context "when player has input correct code" do
       context "when player inputs right away" do
         it "returns true" do
-          expect(@manager.check_victory).to be_false
+          expect(@manager.check_victory).to be false
           @manager.take_turn(%w(R P W M))
-          expect(@manager.check_victory).to be_true
+          expect(@manager.check_victory).to be true
         end
       end
       
       context "when player inputs after some turns" do
         it "returns true" do
-          expect(@manager.check_victory).to be_false
+          expect(@manager.check_victory).to be false
           5.times do
             @manager.take_turn(%w(Bl G Br O))
           end
-          expect(@manager.check_victory).to be_false
+          expect(@manager.check_victory).to be false
           @manager.take_turn(%w(R P W M))
-          expect(@manager.check_victory).to be_true
+          expect(@manager.check_victory).to be true
         end
       end
     end
