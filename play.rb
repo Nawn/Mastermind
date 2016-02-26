@@ -26,16 +26,16 @@ until done_playing do
 	until game.check_over do
 		puts game.turn_announce 
     begin
-      game.display()
+      game.display
       game.take_turn(game.players[:code_breaker].turn) 
-    rescue 
-      puts "Error: incorrect input"
+    rescue ArgumentError => a
+      puts "\nError: #{a}"
       retry 
     end
   end
   
-	puts game.check_victory ? game.display + "\n You win!" : "You Lose!"
-	
+	puts game.check_victory ? "\nYou win!".upcase : "\nYou Lose!".upcase
+	game.display
 	puts "Again!? (Anything for yes, N for No)"
   menu_select = true
   reply = gets.chomp

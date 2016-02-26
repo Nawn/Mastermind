@@ -14,13 +14,13 @@ class Board
     end
     
     def check_valid_code(input_array)
-      raise(ArgumentError, "incorrect input") unless input_array.is_a? Array
-      raise(ArgumentError, "incorrect number of colors") unless input_array.size == 4
-      raise(ArgumentError, "color does not exist") unless input_array.all? {|color| Board.check_color_exist?(color)}
+      raise(ArgumentError, "incorrect input".upcase) unless input_array.is_a? Array
+      raise(ArgumentError, "incorrect number of colors".upcase) unless input_array.size == 4
+      raise(ArgumentError, "color does not exist".upcase) unless input_array.all? {|color| Board.check_color_exist?(color)}
     end
   end
   @colors_available = ["Y", "G", "B", "O", "M", "W", "P", "R"]
-  @example = @colors_available[0..3].join(" ")
+  @example = @colors_available[0..3].join("")
   
   def initialize (attempts=12)
     raise(ArgumentError, "incorrect input to initialize board") unless attempts.is_a? Integer
@@ -41,7 +41,8 @@ class Board
   end
   
   def build
-    Terminal::Table.new :rows => @rows
+    puts "In Result: X means a color matches exactly, o means that a color matches but in wrong slot"
+    Terminal::Table.new :headings => ["Code", "Result"], :rows => @rows
   end
   
   private
