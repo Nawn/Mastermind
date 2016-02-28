@@ -12,22 +12,23 @@ until done_playing do
     if answer.to_i == 1
       game = GameManager.new(:code_breaker)
       menu_select = false
+    elsif answer.to_i == 2
+      game = GameManager.new(:code_maker)
+      menu_select = false
     elsif answer.downcase == "exit"
       exit
     else
-      puts " "
-      puts "Not implemented yet, only option available is 1"
-      puts "returning to menu"
+      puts "INCORRECT OPTION \nReturning to main Menu"
     end
   end
   
-	game.set_board_answer(game.players[:code_maker].generate_code()) 
+	game.set_board_answer(game.players[:code_maker].generate_code()) #Set board answer to an Array, (Which generate_code returns an Array)
   
-	until game.check_over do
-		puts game.turn_announce 
+	until game.check_over do #till this game is over
+		puts game.turn_announce #returns string saying the Turn number
     begin
-      game.display
-      game.take_turn(game.players[:code_breaker].turn) 
+      game.display #Puts a Table
+      game.take_turn(game.players[:code_breaker].turn) #Has whoever is set to the Code_breaker return an Array 
     rescue ArgumentError => a
       puts "\nError: #{a}"
       retry 
