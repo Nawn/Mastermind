@@ -37,6 +37,7 @@ until done_playing do
   
 	puts game.check_victory ? "\nYou win!".upcase : "\nYou Lose!".upcase
 	game.display
+  puts "The code was #{game.board.answer}"
 	puts "Again!? (Anything for yes, N for No)"
   menu_select = true
   reply = gets.chomp
