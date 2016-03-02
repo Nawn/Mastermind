@@ -3,6 +3,7 @@ class Artificial < Player
   attr_accessor :rows
   def initialize
     @colors_found = 0
+    @found = []
     @base = 0
     @test = 0
     @base_num = 0
@@ -17,13 +18,23 @@ class Artificial < Player
   end
   
   def turn
+    if @base_num > 0
+      @base = @test 
+      @base_num = 0
+    end
     code = []
     
-    @colors_found += (@rows.last.result.size - @base_num) unless @test == 0
+    #@colors_found += (@rows.last.result.size - @base_num) unless @test == 0
     
-    @base_num = @rows.first.result.size if @test == 1
+    unless @test == 0
+      if (@rows.last.result.size - @base_num) > 0
+        @found << @test - 1
+      end
+    end
     
-    unless @colors_found >= 4
+    @base_num = @rows.last.result.size unless @rows.empty?
+    
+    unless @found.size >= 4
       2.times do
         code << Board.colors_available[@base]
       end
@@ -31,11 +42,14 @@ class Artificial < Player
       2.times do
         code << Board.colors_available[@test]
       end
+    else
+      
     end
-    
+    puts "Current found list: #{@found}"
+    puts "Current code #{code}"
     @test += 1
     
-    exit if @colors_found >= 5
+    exit if @found.size >= 5
     code
   end
 end
