@@ -18,21 +18,19 @@ class Artificial < Player
   end
   
   def turn
-    if @base_num > 0
-      @base = @test 
-      @base_num = 0
-    end
     code = []
-    
-    #@colors_found += (@rows.last.result.size - @base_num) unless @test == 0
-    
-    unless @test == 0
+    unless @rows.empty?
       if (@rows.last.result.size - @base_num) > 0
         @found << @test - 1
       end
     end
+
+    if @base_num > 0
+      @base = @test 
+      @base_num = 0
+    end
     
-    @base_num = @rows.last.result.size unless @rows.empty?
+    @base_num = @rows.last.result.size unless (@rows.empty? || @test == @base)
     
     unless @found.size >= 4
       2.times do
