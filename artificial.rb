@@ -19,6 +19,9 @@ class Artificial < Player
   
   def turn
     code = []
+    
+    puts "#{@rows.last.result.size} - #{@base_num} = #{@rows.last.result.size - @base_num}" unless @rows.empty?
+    
     unless @rows.empty?
       if (@rows.last.result.size - @base_num) > 0
         @found << @test - 1
