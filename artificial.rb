@@ -24,7 +24,9 @@ class Artificial < Player
     
     unless @rows.empty?
       if (@rows.last.result.size - @base_num) > 0
-        @found << @test - 1
+        (@rows.last.result.size - @base_num).times do
+          @found << @test - 1
+        end
       end
     end
 
@@ -33,7 +35,7 @@ class Artificial < Player
       @base_num = 0
     end
     
-    @base_num = @rows.last.result.size unless (@rows.empty? || @test == @base)
+    @base_num = @rows.last.result.size unless (@rows.empty? || @test == @base || !@rows.last.code.all? {|color| @rows.last.code[0] == color})
     
     unless @found.size >= 4
       2.times do
