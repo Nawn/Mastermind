@@ -22,3 +22,5 @@ Once you've opened the program, the menu will come up asking if you'd like to be
 ###CodeBreaker
 If you've selected Code breaker, you will be met with a screen such as: 
 ![Breaker Menu](https://raw.githubusercontent.com/Nawn/Mastermind/master/mastermind-breaker.PNG)
+Here it will simply be a matter of guessing until you've either run out of turns or guess correctly and win
+![Breaker Win](https://raw.githubusercontent.com/Nawn/Mastermind/master/mastermind-breaker-win.PNG)
