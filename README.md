@@ -24,3 +24,13 @@ If you've selected Code breaker, you will be met with a screen such as:
 ![Breaker Menu](https://raw.githubusercontent.com/Nawn/Mastermind/master/mastermind-breaker.PNG)
 Here it will simply be a matter of guessing until you've either run out of turns or guess correctly and win
 ![Breaker Win](https://raw.githubusercontent.com/Nawn/Mastermind/master/mastermind-breaker-win.PNG)
+
+###CodeMaker
+If you've selected Code Maker, you will be met with a screen such as:
+![Maker Menu](https://raw.githubusercontent.com/Nawn/Mastermind/master/mastermind-maker.PNG)
+
+Simply enter the code you wish for, and watch the machine do it's best to guess!
+![Maker Win](https://raw.githubusercontent.com/Nawn/Mastermind/master/mastermind-maker-end.PNG)
+
+Looks like it figured it out! Lol :) 
+*Thank you*
